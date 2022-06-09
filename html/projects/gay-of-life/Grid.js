@@ -29,6 +29,22 @@ function Grid(gridSize, tileSize){
     return neighbours;
   }
 
+  this.getAliveTiles = function(){
+    var aliveTiles = [];
+    for(var i = 0; i < this.tiles.length; i++){
+      if(this.tiles[i].alive){
+        aliveTiles.push(this.tiles[i]);
+      }
+    }
+    return aliveTiles;
+  }
+
+  this.setPattern = function(pattern){
+    for(var i = 0; i < this.tiles.length; i++){
+      this.tiles[i] = pattern[i];
+    }
+  }
+
   this.getTile = function(x, y){
     for(var i = 0; i < this.tiles.length; i++){
       if(this.tiles[i].x == x && this.tiles[i].y == y){

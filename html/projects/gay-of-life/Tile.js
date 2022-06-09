@@ -24,6 +24,7 @@ function Tile(x,y,tileSize,grid){
     }
     else if (!this.alive){
       fill(deadColor)
+      strokeWeight(2);
       square(this.x, this.y, this.tileSize)
     }
   }
@@ -31,7 +32,6 @@ function Tile(x,y,tileSize,grid){
   this.click = function(){
     if(mouseX > this.x && mouseX < this.x + this.tileSize && mouseY > this.y && mouseY < this.y + this.tileSize){
       this.alive = !this.alive;
-      console.log(this.getAliveNeighbours());
       
 
     }
